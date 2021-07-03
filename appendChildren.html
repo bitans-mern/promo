@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a">
+        <div id="b">
+
+        </div>
+    </div>
+
+    <script>
+        var counter = 0;
+        function appendChildren() {
+            var allDivs = document.getElementsByTagName("div"); 
+            for (var i = 0; i < allDivs.length; i++) {
+                if(++counter === 10)break;
+                var newDiv = document.createElement("div");
+                allDivs[i].appendChild(newDiv); 
+            }
+        }
+
+        function appendChildren__FIX1() {
+            var allDivs = document.getElementsByTagName("div"); 
+            var len = allDivs.length;
+            for (var i = 0; i < len; i++) {
+                var newDiv = document.createElement("div");
+                allDivs[i].appendChild(newDiv); 
+            }
+        }
+
+        function appendChildren__FIX2() {
+            var allDivs = document.querySelectorAll("div"); 
+            for (var i = 0; i < allDivs.length; i++) {
+                var newDiv = document.createElement("div");
+                allDivs[i].appendChild(newDiv); 
+            }
+        }
+        // appendChildren();
+        // appendChildren__FIX1();
+        appendChildren__FIX2();
+    </script>
+</body>
+</html>

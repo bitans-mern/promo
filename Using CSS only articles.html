@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Articles</title>
+    <style>
+        /* Write your CSS solution here (do not edit the surrounding HTML) */
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        body {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+        body :nth-child(1) {
+            background-color: red;
+        }
+        body :nth-child(2) {
+            background-color: yellow;
+        }
+        body :nth-child(3) {
+            background-color: blue;
+        }
+        body :nth-child(4) {
+            background-color: green;
+        }
+
+    </style>
+</head>
+
+<body>
+    <article>First</article>
+    <article>Second</article>
+    <article>Third</article>
+    <article>Fourth</article>
+</body>
+
+</html>

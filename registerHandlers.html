@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registerHandlers</title>
+</head>
+<body>
+    In my life, I used the following web search engines: <br/>
+    <a href="//www.yahoo.com" >Yahoo!</a><br/>
+    <a href="//www.altavista.com" >Altavista</a><br/>
+    <a href="//www.google.com" >Google</a><br/>
+
+    <script>
+        function registerHandlers() {
+            var as = document.getElementsByTagName('a');
+            for (var i = 0; i < as.length; i++) {
+                as[i].onclick = function() {
+                    alert(i);
+                    return false;
+                }
+            }
+        }
+
+        function registerHandlers__FIX1() {
+            var as = document.getElementsByTagName('a');
+            for (var i = 0; i < as.length; i++) {
+                as[i].onclick = (function(j) {
+                    return function() {
+                        alert(j);
+                        return false;
+                    };
+                })(i);
+            }
+        }
+
+        function registerHandlers__FIX2() {
+            var as = document.getElementsByTagName('a');
+            for (let i = 0; i < as.length; i++) {
+                as[i].onclick = function() {
+                    alert(i);
+                    return false;
+                }
+            }
+        }
+        // registerHandlers();
+        // registerHandlers__FIX1();
+        // registerHandlers__FIX2();
+    </script>
+</body>
+</html>
